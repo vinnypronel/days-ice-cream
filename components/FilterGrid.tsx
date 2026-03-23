@@ -26,6 +26,7 @@ interface FilterGridProps {
   pageTitle: string;
   pageSubtitle?: string;
   showImagePlaceholder?: boolean;
+  headerImage?: string;
 }
 
 function getCategoryStyle(categoryName: string) {
@@ -65,25 +66,51 @@ function getCategoryColorHex(categoryName: string) {
   return "#546A76"; // fallback
 }
 
-export default function FilterGrid({ items, categories, pageTitle, pageSubtitle, showImagePlaceholder = true }: FilterGridProps) {
+export default function FilterGrid({ items, categories, pageTitle, pageSubtitle, showImagePlaceholder = true, headerImage }: FilterGridProps) {
   const sortedCategories = [...categories].sort((a, b) => a.order - b.order);
 
   return (
     <div style={{ background: "var(--color-base)", minHeight: "100vh", paddingBottom: "120px", color: "var(--color-cream)" }}>
-      {/* Hero Section */}
-      <section style={{ padding: "48px 24px 32px", textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
-        <h1 className="heading" style={{ fontSize: "clamp(48px, 6vw, 72px)", color: "var(--color-cream)", marginBottom: "16px" }}>
-          {pageTitle}
-        </h1>
-        {pageSubtitle && (
-          <p style={{ fontSize: "18px", opacity: 0.8, color: "var(--color-cream)", lineHeight: 1.6 }}>
-            {pageSubtitle}
-          </p>
-        )}
-      </section>
+      {/* Hero Section with Background */}
+      <div style={{ 
+        width: "100%", 
+        backgroundImage: headerImage ? `url('${headerImage}')` : "none", 
+        backgroundSize: "100% auto", 
+        backgroundPosition: "center",
+        position: "relative"
+      }}>
+        {/* Subtle light overlay for readability */}
+        <div style={{ 
+          position: "absolute", 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0, 
+          backgroundColor: "rgba(253, 255, 252, 0.15)", 
+          zIndex: 1 
+        }} />
+
+        <section style={{ 
+          padding: "40px 24px 104px", 
+          textAlign: "center", 
+          maxWidth: "800px", 
+          margin: "0 auto", 
+          position: "relative", 
+          zIndex: 2 
+        }}>
+          <h1 className="heading" style={{ fontSize: "clamp(48px, 6vw, 72px)", color: "var(--color-cream)", marginBottom: "16px" }}>
+            {pageTitle}
+          </h1>
+          {pageSubtitle && (
+            <p style={{ fontSize: "18px", opacity: 0.9, color: "var(--color-cream)", lineHeight: 1.6, fontWeight: 500 }}>
+              {pageSubtitle}
+            </p>
+          )}
+        </section>
+      </div>
 
       {/* Grid rendering by category section */}
-      <div style={{ padding: "24px 0" }}>
+      <div style={{ padding: "0" }}>
         {sortedCategories.map(cat => {
           const catItems = items.filter(item => item.category?.slug === cat.slug);
           if (catItems.length === 0) return null;

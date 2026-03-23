@@ -70,6 +70,7 @@ export default function ToppingsPage() {
           pageTitle="Premium Toppings" 
           pageSubtitle="The perfect finish. Choose from our hot classic sauces, fresh fruit, and crunchy candies."
           showImagePlaceholder={true}
+          headerImage="/toppings.png"
         />
       </main>
       <Footer />

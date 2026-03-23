@@ -73,6 +73,7 @@ export default function FlavorsPage() {
           pageTitle="Our Flavors" 
           pageSubtitle="Handcrafted daily in Ocean Grove. From century-old classics to modern seasonal creations."
           showImagePlaceholder={false}
+          headerImage="/Flavors.png"
         />
       </main>
       <Footer />

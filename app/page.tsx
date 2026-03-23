@@ -69,7 +69,7 @@ function HeroSection() {
         alignItems: "center",
         justifyContent: "center",
         overflow: "visible",
-        padding: "20px 24px 12vh",
+        padding: "3vh 24px 27vh",
         textAlign: "center",
         backgroundImage: "url('/background.png')",
         backgroundSize: "cover",
