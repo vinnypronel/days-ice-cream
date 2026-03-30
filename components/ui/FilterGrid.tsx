@@ -213,7 +213,7 @@ export default function FilterGrid({ items, categories, pageTitle, pageSubtitle,
                 overflow: "visible",
                 zIndex: 5
               }}>
-                <div style={{ maxWidth: "1540px", margin: "0 auto", textAlign: "center" }}>
+                <div style={{ width: "100%", textAlign: "center" }}>
                   <h2 className="heading" style={{ fontSize: "clamp(24px, 3.5vw, 34px)", margin: 0, lineHeight: 1, letterSpacing: "0.02em" }}>
                     {cat.title}
                   </h2>
@@ -232,7 +232,7 @@ export default function FilterGrid({ items, categories, pageTitle, pageSubtitle,
               </div>
 
               {/* Grid Constraints */}
-              <div style={{ maxWidth: "1540px", margin: "0 auto", padding: "48px 24px 0" }}>
+              <div style={{ width: "100%", padding: "48px 24px 0" }}>
                 <BalancedGrid itemCount={catItems.length}>
                   {catItems.map((item, i) => (
                     <AnimatedCard key={item._id} item={item} index={i} categoryTitle={cat.title} showImagePlaceholder={showImagePlaceholder} />
@@ -290,12 +290,11 @@ function BalancedGrid({ children, itemCount }: { children: React.ReactNode, item
   const maxWidth = bestCols * cardW + (bestCols - 1) * gap;
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className="masonry-container" 
-      style={{ 
-        maxWidth: maxWidth > 0 ? `${maxWidth}px` : "100%", 
-        margin: "0 auto" 
+      className="masonry-container"
+      style={{
+        width: "100%",
       }}
     >
       {children}
@@ -335,8 +334,8 @@ function AnimatedCard({ item, index, categoryTitle, showImagePlaceholder }: { it
         transform: isVisible ? "translateY(0)" : "translateY(20px)",
         transition: "opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease",
         height: currentCardHeight,
-        width: "260px",
-        flex: "0 1 260px",
+        minWidth: "260px",
+        flex: "1 1 260px",
         marginBottom: "0",
         backgroundColor: "#FCCE97", 
         border: "1.2px solid #020100",

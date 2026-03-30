@@ -16,7 +16,7 @@ export default function MenuButtons({ align = "center", isNavbar = false, layout
       ? (align === "right" ? "flex-end" : align === "left" ? "flex-start" : "center")
       : "center",
     justifyContent: "center",
-    gap: isNavbar ? "14px" : (layout === "row" ? "16px" : "28px"),
+    gap: isNavbar ? "14px" : (layout === "row" ? "16px" : "14px"),
     width: "fit-content",
     flexWrap: "wrap",
   };
@@ -38,8 +38,8 @@ export default function MenuButtons({ align = "center", isNavbar = false, layout
         variant="mint"
         href="/toppings"
         style={{
-          padding: isNavbar ? "5px 12px" : "13px 26px",
-          fontSize: isNavbar ? "10px" : "12px",
+          padding: isNavbar ? "5px 12px" : "10px 22px",
+          fontSize: isNavbar ? "10px" : "11px",
           alignSelf: align === "right" ? "flex-end" : align === "left" ? "flex-start" : "center",
         }}
       >

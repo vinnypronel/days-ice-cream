@@ -266,10 +266,10 @@ function HoursLocationStrip() {
             </div>
             <div style={{ display: "flex", gap: "12px", flexWrap: "nowrap", marginLeft: "-60px" }}>
               <RippleButton variant="primary" href="/contact" style={{ padding: "16px 32px" }}>
-                Get Directions
+                Get in Touch
               </RippleButton>
               <RippleButton variant="outline" href="/employment" style={{ padding: "16px 32px" }}>
-                Join Our Team
+                Apply Now!
               </RippleButton>
             </div>
           </div>

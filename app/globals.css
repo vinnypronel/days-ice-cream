@@ -29,6 +29,15 @@
   padding: 0;
 }
 
+/* ─── Hide scrollbar everywhere ─── */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge legacy */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
 html, body {
   margin: 0 !important;
   padding: 0 !important;
@@ -36,9 +45,7 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   background-color: var(--color-base);
-  /* Fix for Windows scrollbar causing horizontal gap */
   overflow-y: auto;
-  scrollbar-gutter: stable both-edges;
 }
 
 section, footer, header, main, .full-bleed {

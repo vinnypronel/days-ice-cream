@@ -102,7 +102,7 @@ function AboutHero() {
 
       {/* Side Vintage Photos */}
       <div className="hero-photo-left" style={{ position: "absolute", left: "max(24px, 3vw)", top: "50%", transform: "translateY(-50%)", zIndex: 3 }}>
-        <VintagePhoto src="/oldoutsideshot.jpg" alt="Old outside shot" rotate={-4} style={{ width: "clamp(200px, 22.5vw, 400px)" }} />
+        <VintagePhoto src="/oldoutsideshot.jpg" alt="Old outside shot" rotate={-4} style={{ width: "clamp(180px, 20vw, 360px)" }} />
       </div>
       <div className="hero-photo-right" style={{ position: "absolute", right: "max(24px, 3vw)", top: "50%", transform: "translateY(-50%)", zIndex: 3 }}>
         <VintagePhoto src="/windowlogo.jpg" alt="Vintage window logo" rotate={3} style={{ width: "clamp(180px, 20vw, 360px)" }} />
@@ -274,9 +274,9 @@ function NewOwnership() {
             />
           </div>
 
-          <div className="bottom-buttons" style={{ display: "flex", flexDirection: "column", gap: "28px", alignItems: "center" }}>
+          <div className="bottom-buttons" style={{ display: "flex", flexDirection: "column", gap: "14px", alignItems: "center" }}>
             <MenuButtons />
-            <RippleButton variant="purple" href="/contact" style={{ padding: "8px 24px", fontSize: "11px" }}>
+            <RippleButton variant="purple" href="/contact" style={{ padding: "10px 28px", fontSize: "12px" }}>
               Visit Us
             </RippleButton>
           </div>
